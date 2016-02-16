@@ -8,14 +8,14 @@ import UIKit
 //func wordsInSentence(string: String) -> ()
 //{
 //    
-//    let firstSentence = string.componentsSeparatedByString(" ")
+//    let firstSentence = string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).componentsSeparatedByString(" ")
 //    firstSentence.count
 //    
 //}
 //
-//wordsInSentence("I love Starbucks")
-//
-//
+//wordsInSentence("I love Starbucks ")
+
+
 
 func wordsInSentence(string: String) -> Int
 {
