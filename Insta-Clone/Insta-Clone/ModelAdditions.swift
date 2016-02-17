@@ -20,7 +20,12 @@ extension Post
     class func recordWith(post: Post) throws -> CKRecord?
     {
         let imageURL = NSURL.imageURL()
+        print(imageURL)
+        print(post.image)
+        
         guard let data = UIImageJPEGRepresentation(post.image, 0.7) else { throw PostError.WritingImage }
+        
+        print(data)
         let saved = data.writeToURL(imageURL, atomically: true)
         
         if saved {
