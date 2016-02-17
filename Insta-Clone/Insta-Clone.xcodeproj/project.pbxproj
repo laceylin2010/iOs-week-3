@@ -49,13 +49,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF2E51A91C743C8F004A165F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AFC7E64F1C73BF7A002EAE3B /* API.swift */,
+				AFC7E6511C73C111002EAE3B /* Post.swift */,
+				AFC7E6531C73C26A002EAE3B /* ModelAdditions.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		AFC7E6051C6E3F9F002EAE3B = {
 			isa = PBXGroup;
 			children = (
 				AFC7E6261C6E441C002EAE3B /* CloudKit.framework */,
 				AFC7E6101C6E3F9F002EAE3B /* Insta-Clone */,
-				AFC7E64C1C738BAF002EAE3B /* Categories */,
-				AFC7E60F1C6E3F9F002EAE3B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,14 +73,18 @@
 				AFC7E60E1C6E3F9F002EAE3B /* Insta-Clone.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		AFC7E6101C6E3F9F002EAE3B /* Insta-Clone */ = {
 			isa = PBXGroup;
 			children = (
+				AFC7E6231C6E4052002EAE3B /* Controller */,
+				AFC7E60F1C6E3F9F002EAE3B /* Products */,
+				AFC7E64C1C738BAF002EAE3B /* Categories */,
+				AF2E51A91C743C8F004A165F /* Model */,
 				AFC7E6111C6E3F9F002EAE3B /* AppDelegate.swift */,
 				AFC7E6251C6E4146002EAE3B /* Insta-Clone.entitlements */,
-				AFC7E6231C6E4052002EAE3B /* Controller */,
 				AFC7E6241C6E4061002EAE3B /* View */,
 				AFC7E6181C6E3F9F002EAE3B /* Assets.xcassets */,
 				AFC7E61D1C6E3F9F002EAE3B /* Info.plist */,
@@ -100,14 +112,10 @@
 		AFC7E64C1C738BAF002EAE3B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				AFC7E6511C73C111002EAE3B /* Post.swift */,
-				AFC7E64F1C73BF7A002EAE3B /* API.swift */,
-				AFC7E6531C73C26A002EAE3B /* ModelAdditions.swift */,
 				AFC7E64A1C738B9E002EAE3B /* Additions.swift */,
 				AFC7E64D1C73B297002EAE3B /* ClassFilters.swift */,
 			);
 			name = Categories;
-			path = "Insta-Clone";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

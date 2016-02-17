@@ -23,11 +23,8 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         let filterNames = CIFilter.filterNamesInCategories(nil)
         print(filterNames)
-        
-
     }
-
-
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -105,16 +102,12 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         actionSheet.addAction(chromeAction)
         actionSheet.addAction(invertAction)
         actionSheet.addAction(transferAction)
-        
         actionSheet.addAction(cancelAction)
         actionSheet.addAction(resetAction)
-        
         
         self.presentViewController(actionSheet, animated: true, completion: nil)
         
     }
-    
-
 
     @IBAction func saveButtonSelected(sender: AnyObject)
     {

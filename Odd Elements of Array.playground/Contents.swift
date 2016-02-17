@@ -11,3 +11,5 @@ func isOdd(i: Int) -> Bool {
 
 let number = numbers.filter(isOdd)
 
+
+//Allen is the SnapChat master!
