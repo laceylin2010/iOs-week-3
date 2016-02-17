@@ -29,7 +29,19 @@
                             <constraint firstItem="jEF-QK-WmS" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.8" id="grB-9J-ETV"/>
                         </constraints>
                     </view>
-                    <toolbarItems/>
+                    <toolbarItems>
+                        <barButtonItem title="Edit" id="bLD-r0-pKa">
+                            <connections>
+                                <action selector="editButtonSelected:" destination="BYZ-38-t0r" id="kMb-wl-aIw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="D0j-AT-YOr"/>
+                        <barButtonItem title="Save" id="KUC-kg-DWT">
+                            <connections>
+                                <action selector="saveButtonSelected:" destination="BYZ-38-t0r" id="ZEM-PF-ife"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="6wE-HY-cSF">
                         <barButtonItem key="rightBarButtonItem" title="+" id="cSw-mr-er0">
                             <connections>
@@ -37,32 +49,36 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="jEF-QK-WmS" id="tvT-EZ-Thy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="732" y="436.5"/>
+            <point key="canvasLocation" x="1142" y="350"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="LJh-a1-LB4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fwp-p3-mzV" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="fwp-p3-mzV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ptW-v4-l4h"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LV1-qZ-hk7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="c3P-ed-IuH">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ep6-Xc-hEb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJo-Yt-oys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="330" y="-409.5"/>
+            <point key="canvasLocation" x="1142" y="-410"/>
         </scene>
     </scenes>
 </document>
