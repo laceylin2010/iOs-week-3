@@ -29,7 +29,7 @@ class API
             if let record = try Post.recordWith(post) {
                 self.database.saveRecord(record, completionHandler: { (record, error) -> Void in
                     if error == nil {
-                        print(record)
+//                        print(record)
                         completion(success: true)
                     }
                 })

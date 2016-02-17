@@ -43,6 +43,7 @@ class GalleryViewController: UIViewController
         API.shared.GETPOST { (posts) -> () in
             if let posts = posts {
                 self.dataSource = posts
+                print(posts)
             } else { print ("no posts")}
         }
     }
@@ -57,7 +58,7 @@ extension GalleryViewController
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
-        let galleryCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(GalleryCollectionViewCell.id(), forIndexPath: indexPath) as! GalleryCollectionViewCell
+        let galleryCell = self.collectionView.dequeueReusableCellWithReuseIdentifier("GalleryCollectionViewCell", forIndexPath: indexPath) as! GalleryCollectionViewCell
         galleryCell.post = self.dataSource[indexPath.row]
         
         return galleryCell

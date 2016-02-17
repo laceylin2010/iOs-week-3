@@ -23,10 +23,6 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
 //        let filterNames = CIFilter.filterNamesInCategories(nil)
 //        print(filterNames)
-//
-        API.shared.GETPOST { (posts) -> () in
-            print(posts)
-        } //checks that the icloud is working
 
     }
     
