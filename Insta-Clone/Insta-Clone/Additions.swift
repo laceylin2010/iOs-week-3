@@ -25,7 +25,6 @@ extension NSURL
     class func imageURL() -> NSURL
     {
         guard let documentsDirectory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first else { fatalError() }
-        print(documentsDirectory)
         return documentsDirectory.URLByAppendingPathComponent("image")
     }
     

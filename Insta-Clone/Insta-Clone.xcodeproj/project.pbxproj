@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF2E51AB1C75082E004A165F /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E51AA1C75082E004A165F /* GalleryViewController.swift */; };
+		AF2E51AD1C750EC5004A165F /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E51AC1C750EC5004A165F /* GalleryCollectionViewCell.swift */; };
+		AF2E51AF1C7511C9004A165F /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E51AE1C7511C9004A165F /* Identity.swift */; };
+		AF2E51B11C7519ED004A165F /* GalleryCustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E51B01C7519ED004A165F /* GalleryCustomFlowLayout.swift */; };
 		AFC7E6121C6E3F9F002EAE3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC7E6111C6E3F9F002EAE3B /* AppDelegate.swift */; };
 		AFC7E6171C6E3F9F002EAE3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC7E6151C6E3F9F002EAE3B /* Main.storyboard */; };
 		AFC7E6191C6E3F9F002EAE3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFC7E6181C6E3F9F002EAE3B /* Assets.xcassets */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF2E51AA1C75082E004A165F /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		AF2E51AC1C750EC5004A165F /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		AF2E51AE1C7511C9004A165F /* Identity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
+		AF2E51B01C7519ED004A165F /* GalleryCustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCustomFlowLayout.swift; sourceTree = "<group>"; };
 		AFC7E60E1C6E3F9F002EAE3B /* Insta-Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insta-Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC7E6111C6E3F9F002EAE3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFC7E6161C6E3F9F002EAE3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,6 +60,7 @@
 		AF2E51A91C743C8F004A165F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AF2E51AE1C7511C9004A165F /* Identity.swift */,
 				AFC7E64F1C73BF7A002EAE3B /* API.swift */,
 				AFC7E6511C73C111002EAE3B /* Post.swift */,
 				AFC7E6531C73C26A002EAE3B /* ModelAdditions.swift */,
@@ -70,7 +79,6 @@
 		AFC7E60F1C6E3F9F002EAE3B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AFC7E60E1C6E3F9F002EAE3B /* Insta-Clone.app */,
 			);
 			name = Products;
 			path = ..;
@@ -79,12 +87,13 @@
 		AFC7E6101C6E3F9F002EAE3B /* Insta-Clone */ = {
 			isa = PBXGroup;
 			children = (
+				AFC7E6111C6E3F9F002EAE3B /* AppDelegate.swift */,
+				AFC7E6251C6E4146002EAE3B /* Insta-Clone.entitlements */,
+				AFC7E60E1C6E3F9F002EAE3B /* Insta-Clone.app */,
 				AFC7E6231C6E4052002EAE3B /* Controller */,
 				AFC7E60F1C6E3F9F002EAE3B /* Products */,
 				AFC7E64C1C738BAF002EAE3B /* Categories */,
 				AF2E51A91C743C8F004A165F /* Model */,
-				AFC7E6111C6E3F9F002EAE3B /* AppDelegate.swift */,
-				AFC7E6251C6E4146002EAE3B /* Insta-Clone.entitlements */,
 				AFC7E6241C6E4061002EAE3B /* View */,
 				AFC7E6181C6E3F9F002EAE3B /* Assets.xcassets */,
 				AFC7E61D1C6E3F9F002EAE3B /* Info.plist */,
@@ -95,6 +104,7 @@
 		AFC7E6231C6E4052002EAE3B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AF2E51AA1C75082E004A165F /* GalleryViewController.swift */,
 				AFC7E6281C6E4F0D002EAE3B /* ImageViewController.swift */,
 			);
 			name = Controller;
@@ -105,6 +115,8 @@
 			children = (
 				AFC7E61A1C6E3F9F002EAE3B /* LaunchScreen.storyboard */,
 				AFC7E6151C6E3F9F002EAE3B /* Main.storyboard */,
+				AF2E51AC1C750EC5004A165F /* GalleryCollectionViewCell.swift */,
+				AF2E51B01C7519ED004A165F /* GalleryCustomFlowLayout.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -200,7 +212,11 @@
 				AFC7E6291C6E4F0D002EAE3B /* ImageViewController.swift in Sources */,
 				AFC7E6521C73C111002EAE3B /* Post.swift in Sources */,
 				AFC7E6121C6E3F9F002EAE3B /* AppDelegate.swift in Sources */,
+				AF2E51B11C7519ED004A165F /* GalleryCustomFlowLayout.swift in Sources */,
+				AF2E51AB1C75082E004A165F /* GalleryViewController.swift in Sources */,
 				AFC7E6501C73BF7A002EAE3B /* API.swift in Sources */,
+				AF2E51AF1C7511C9004A165F /* Identity.swift in Sources */,
+				AF2E51AD1C750EC5004A165F /* GalleryCollectionViewCell.swift in Sources */,
 				AFC7E6541C73C26A002EAE3B /* ModelAdditions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

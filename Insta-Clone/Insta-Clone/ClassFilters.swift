@@ -8,22 +8,31 @@
 
 import UIKit
 
-class filters
+
+
+typealias FiltersCompletion = (theimage: UIImage?) -> ()
+
+
+class Filters
 {
+    static let shared = Filters()
+    let context: CIContext
     
-    typealias FiltersCompletion = (theimage: UIImage?) -> ()
+    private init()
+    {
+        let options = [kCIContextWorkingColorSpace : NSNull()]
+        let EAGContext = EAGLContext(API: .OpenGLES2)
+        self.context = CIContext(EAGLContext: EAGContext, options: options)
+    }
     
-    private class func filter(name: String, image: UIImage, completion: (FiltersCompletion)) {
+    
+    private func filter(name: String, image: UIImage, completion: (FiltersCompletion)) {
         NSOperationQueue().addOperationWithBlock { () -> Void in
             guard let filter = CIFilter(name: name) else { fatalError("Check filter spelling.") }
             filter.setValue(CIImage(image: image), forKey: kCIInputImageKey)
             
-            let options = [kCIContextWorkingColorSpace : NSNull()]
-            let EAGContext = EAGLContext(API: .OpenGLES2)
-            let GPUContext = CIContext(EAGLContext: EAGContext, options: options)
-            
             guard let outputImage = filter.outputImage else { fatalError("Y no Image?") }
-            let CGImage = GPUContext.createCGImage(outputImage, fromRect: outputImage.extent)
+            let CGImage = self.context.createCGImage(outputImage, fromRect: outputImage.extent)
             
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                 completion(theimage: UIImage(CGImage: CGImage))
@@ -32,24 +41,24 @@ class filters
 
     }
     
-    class func blackWhite(image: UIImage, completion: FiltersCompletion)
+    func blackWhite(image: UIImage, completion: FiltersCompletion)
     {
         self.filter("CIPhotoEffectMono", image: image, completion: completion)
     }
     
-    class func pixelate(image: UIImage, completion: FiltersCompletion)
+    func pixelate(image: UIImage, completion: FiltersCompletion)
     {
         self.filter("CIPixellate", image: image, completion: completion)
     }
-    class func chrome(image: UIImage, completion: FiltersCompletion)
+    func chrome(image: UIImage, completion: FiltersCompletion)
     {
         self.filter("CIPhotoEffectChrome", image: image, completion: completion)
     }
-    class func invert(image: UIImage, completion: FiltersCompletion)
+    func invert(image: UIImage, completion: FiltersCompletion)
     {
         self.filter("CIColorInvert", image: image, completion: completion)
     }
-    class func transfer(image: UIImage, completion: FiltersCompletion)
+    func transfer(image: UIImage, completion: FiltersCompletion)
     {
         self.filter("CIPhotoEffectTransfer", image: image, completion: completion)
     }

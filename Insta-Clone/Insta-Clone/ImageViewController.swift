@@ -21,8 +21,13 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     {
         super.viewDidLoad()
         
-        let filterNames = CIFilter.filterNamesInCategories(nil)
-        print(filterNames)
+//        let filterNames = CIFilter.filterNamesInCategories(nil)
+//        print(filterNames)
+//
+        API.shared.GETPOST { (posts) -> () in
+            print(posts)
+        } //checks that the icloud is working
+
     }
     
     override func didReceiveMemoryWarning()
@@ -60,31 +65,31 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let actionSheet = UIAlertController(title: "filters", message: "Please select a filter", preferredStyle: .Alert)
         
         let pixels = UIAlertAction(title: "Pixels", style: .Default) { (action) -> Void in
-            filters.pixelate(image, completion: { (theImage) -> () in
+            Filters.shared.pixelate(image, completion: { (theImage) -> () in
                 self.imageView.image = theImage
             })
         }
         
         let bwAction = UIAlertAction(title: "Black and White", style: .Default) { (action) -> Void in
-            filters.blackWhite(image, completion: { (theImage) -> () in
+            Filters.shared.blackWhite(image, completion: { (theImage) -> () in
                 self.imageView.image = theImage
             })
         }
         
         let chromeAction = UIAlertAction(title: "Chrome", style: .Default) { (action) -> Void in
-            filters.chrome(image, completion: { (theImage) -> () in
+            Filters.shared.chrome(image, completion: { (theImage) -> () in
                 self.imageView.image = theImage
             })
         }
         
         let invertAction = UIAlertAction(title: "Invert", style: .Default) { (action) -> Void in
-            filters.invert(image, completion: { (theImage) -> () in
+            Filters.shared.invert(image, completion: { (theImage) -> () in
                 self.imageView.image = theImage
             })
         }
         
         let transferAction = UIAlertAction(title: "Transfer", style: .Default) { (action) -> Void in
-            filters.transfer(image, completion: { (theImage) -> () in
+            Filters.shared.transfer(image, completion: { (theImage) -> () in
                 self.imageView.image = theImage
             })
         }
@@ -160,6 +165,9 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
 extension ImageViewController
 {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        
+        UIImage.resize(image, size: CGSize(width: 500, height: 800))
+        
         self.imageView.image = image
         self.originalImage = image
         self.dismissViewControllerAnimated(true, completion: nil)
