@@ -45,6 +45,15 @@ class filters
     {
         self.filter("CIPhotoEffectChrome", image: image, completion: completion)
     }
+    class func invert(image: UIImage, completion: FiltersCompletion)
+    {
+        self.filter("CIColorInvert", image: image, completion: completion)
+    }
+    class func transfer(image: UIImage, completion: FiltersCompletion)
+    {
+        self.filter("CIPhotoEffectTransfer", image: image, completion: completion)
+    }
 }
+
 
 

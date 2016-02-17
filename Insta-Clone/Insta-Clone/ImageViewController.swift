@@ -80,6 +80,18 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
             })
         }
         
+        let invertAction = UIAlertAction(title: "Invert", style: .Default) { (action) -> Void in
+            filters.invert(image, completion: { (theImage) -> () in
+                self.imageView.image = theImage
+            })
+        }
+        
+        let transferAction = UIAlertAction(title: "Transfer", style: .Default) { (action) -> Void in
+            filters.transfer(image, completion: { (theImage) -> () in
+                self.imageView.image = theImage
+            })
+        }
+        
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
@@ -91,7 +103,8 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         actionSheet.addAction(bwAction)
         actionSheet.addAction(pixels)
         actionSheet.addAction(chromeAction)
-        
+        actionSheet.addAction(invertAction)
+        actionSheet.addAction(transferAction)
         
         actionSheet.addAction(cancelAction)
         actionSheet.addAction(resetAction)
