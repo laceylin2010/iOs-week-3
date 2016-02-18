@@ -112,7 +112,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
     @IBAction func saveButtonSelected(sender: AnyObject)
     {
-    
+        
         guard let image = self.imageView.image else { return }
         UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)
         
@@ -121,6 +121,8 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
                 print("Cloudkit Saved")
             }
         }
+        
+        
     }
     
     func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafePointer<Void>)
@@ -130,9 +132,9 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
             alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
             self.presentViewController(alertController, animated: true, completion: nil)
         }
+        
     }
     
-
 
     func presentActionSheet()
     {

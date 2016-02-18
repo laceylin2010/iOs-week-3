@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yLm-04-oUd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uZ9-jt-I3y">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -51,11 +50,6 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="6wE-HY-cSF">
                         <nil key="title"/>
-                        <barButtonItem key="rightBarButtonItem" title="Gallery" id="gkL-Ei-Dqo">
-                            <connections>
-                                <segue destination="jIL-Ku-Sev" kind="show" identifier="GalleryViewController" id="YkE-1x-1HT"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="jEF-QK-WmS" id="tvT-EZ-Thy"/>
@@ -65,7 +59,7 @@
             </objects>
             <point key="canvasLocation" x="770" y="334"/>
         </scene>
-        <!--Gallery View Controller-->
+        <!--Feed-->
         <scene sceneID="bmM-jK-Tsc">
             <objects>
                 <viewController id="jIL-Ku-Sev" customClass="GalleryViewController" customModule="Insta_Clone" customModuleProvider="target" sceneMemberID="viewController">
@@ -77,7 +71,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ymq-8Y-krd">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ymq-8Y-krd">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oxH-Gn-I1O">
                                     <size key="itemSize" width="198" height="188"/>
@@ -87,23 +81,23 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryCollectionViewCell" id="tdV-e7-10a" customClass="GalleryCollectionViewCell" customModule="Insta_Clone" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="198" height="188"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="198" height="188"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="198" height="188"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lOT-Zg-ZVk">
-                                                    <rect key="frame" x="8" y="8" width="182" height="172"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="198" height="188"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="lOT-Zg-ZVk" firstAttribute="bottom" secondItem="tdV-e7-10a" secondAttribute="bottomMargin" id="6m6-RG-4F1"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="lOT-Zg-ZVk" secondAttribute="trailing" id="P2P-Ih-mXX"/>
-                                            <constraint firstItem="lOT-Zg-ZVk" firstAttribute="leading" secondItem="tdV-e7-10a" secondAttribute="leadingMargin" id="UZI-MM-6g1"/>
-                                            <constraint firstItem="lOT-Zg-ZVk" firstAttribute="top" secondItem="tdV-e7-10a" secondAttribute="topMargin" id="kjK-7w-H8Y"/>
+                                            <constraint firstItem="lOT-Zg-ZVk" firstAttribute="bottom" secondItem="tdV-e7-10a" secondAttribute="bottom" id="6m6-RG-4F1"/>
+                                            <constraint firstAttribute="trailing" secondItem="lOT-Zg-ZVk" secondAttribute="trailing" id="P2P-Ih-mXX"/>
+                                            <constraint firstItem="lOT-Zg-ZVk" firstAttribute="leading" secondItem="tdV-e7-10a" secondAttribute="leading" id="UZI-MM-6g1"/>
+                                            <constraint firstItem="lOT-Zg-ZVk" firstAttribute="top" secondItem="tdV-e7-10a" secondAttribute="top" id="kjK-7w-H8Y"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="lOT-Zg-ZVk" id="Ajd-Rh-eQL"/>
@@ -116,7 +110,14 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ymq-8Y-krd" firstAttribute="leading" secondItem="uG9-j9-eEI" secondAttribute="leading" id="QWP-Kw-C1Z"/>
+                            <constraint firstAttribute="bottom" secondItem="ymq-8Y-krd" secondAttribute="bottom" id="hXe-fD-ev3"/>
+                            <constraint firstItem="ymq-8Y-krd" firstAttribute="top" secondItem="uG9-j9-eEI" secondAttribute="top" id="m38-mZ-sMN"/>
+                            <constraint firstAttribute="trailing" secondItem="ymq-8Y-krd" secondAttribute="trailing" id="pfM-qS-sS1"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Feed" id="Gp8-iK-YAI"/>
                     <connections>
                         <outlet property="collectionView" destination="ymq-8Y-krd" id="inf-6D-Ehe"/>
                     </connections>
@@ -125,11 +126,11 @@
             </objects>
             <point key="canvasLocation" x="1814" y="350"/>
         </scene>
-        <!--Item-->
+        <!--Upload-->
         <scene sceneID="LJh-a1-LB4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="fwp-p3-mzV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ptW-v4-l4h"/>
+                    <tabBarItem key="tabBarItem" title="Upload" id="ptW-v4-l4h"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LV1-qZ-hk7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -146,24 +147,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJo-Yt-oys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1954" y="-410"/>
+            <point key="canvasLocation" x="2766" y="-410"/>
         </scene>
         <!--Tab Bar Controller-->
-        <scene sceneID="ac5-nq-bzp">
+        <scene sceneID="MGY-9l-FTm">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="yLm-04-oUd" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uZ9-jt-I3y" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="q7g-fe-oK6">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="bma-TC-HqZ">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="fwp-p3-mzV" kind="relationship" relationship="viewControllers" id="LUn-7x-7UH"/>
+                        <segue destination="fwp-p3-mzV" kind="relationship" relationship="viewControllers" id="Q7t-xA-cOd"/>
+                        <segue destination="jIL-Ku-Sev" kind="relationship" relationship="viewControllers" id="AyF-oT-uEk"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XHl-8P-dbr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3iB-hM-thR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1142" y="-410"/>
+            <point key="canvasLocation" x="1954" y="-410"/>
         </scene>
     </scenes>
 </document>
