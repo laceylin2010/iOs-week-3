@@ -8,11 +8,18 @@
 
 import UIKit
 
-class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
+class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, SegueHandlerType
 {
+    
     @IBOutlet weak var imageView: UIImageView!
     
     var originalImage = UIImage?()
+    
+    
+    enum SegueIdentifier: String
+    {
+        case Preview = "FiltersPreviewViewController"
+    }
  
     
     lazy var imagePicker = UIImagePickerController()
@@ -30,6 +37,20 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     {
         super.didReceiveMemoryWarning()
        
+    }
+
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        switch self.segueIdentifierForSegue(segue)
+        {
+        case .Preview:
+            guard let previewViewController = segue.destinationViewController as? FiltersPreviewViewController else {  fatalError() }
+            guard let image = sender as? UIImage else { fatalError() }
+            
+            previewViewController.image = image
+//            previewViewController.delegate = self
+        }
     }
     
     func presentImagePicker(source: UIImagePickerControllerSourceType )
@@ -56,57 +77,60 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBAction func editButtonSelected(sender: AnyObject)
     {
-        
-        guard let image = self.imageView.image else { return }
-        let actionSheet = UIAlertController(title: "filters", message: "Please select a filter", preferredStyle: .Alert)
-        
-        let pixels = UIAlertAction(title: "Pixels", style: .Default) { (action) -> Void in
-            Filters.shared.pixelate(image, completion: { (theImage) -> () in
-                self.imageView.image = theImage
-            })
-        }
-        
-        let bwAction = UIAlertAction(title: "Black and White", style: .Default) { (action) -> Void in
-            Filters.shared.blackWhite(image, completion: { (theImage) -> () in
-                self.imageView.image = theImage
-            })
-        }
-        
-        let chromeAction = UIAlertAction(title: "Chrome", style: .Default) { (action) -> Void in
-            Filters.shared.chrome(image, completion: { (theImage) -> () in
-                self.imageView.image = theImage
-            })
-        }
-        
-        let invertAction = UIAlertAction(title: "Invert", style: .Default) { (action) -> Void in
-            Filters.shared.invert(image, completion: { (theImage) -> () in
-                self.imageView.image = theImage
-            })
-        }
-        
-        let transferAction = UIAlertAction(title: "Transfer", style: .Default) { (action) -> Void in
-            Filters.shared.transfer(image, completion: { (theImage) -> () in
-                self.imageView.image = theImage
-            })
-        }
-        
 
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-        
-        let resetAction = UIAlertAction(title: "Reset", style: .Default) { (action) -> Void in
-            self.imageView.image = self.originalImage
-        }
+        guard let image = self.imageView.image else { return }
+        self.performSegueWithIdentifier(.Preview, sender: image)
     
         
-        actionSheet.addAction(bwAction)
-        actionSheet.addAction(pixels)
-        actionSheet.addAction(chromeAction)
-        actionSheet.addAction(invertAction)
-        actionSheet.addAction(transferAction)
-        actionSheet.addAction(cancelAction)
-        actionSheet.addAction(resetAction)
-        
-        self.presentViewController(actionSheet, animated: true, completion: nil)
+//        let actionSheet = UIAlertController(title: "filters", message: "Please select a filter", preferredStyle: .Alert)
+//        
+//        let pixels = UIAlertAction(title: "Pixels", style: .Default) { (action) -> Void in
+//            Filters.shared.pixelate(image, completion: { (theImage) -> () in
+//                self.imageView.image = theImage
+//            })
+//        }
+//        
+//        let bwAction = UIAlertAction(title: "Black and White", style: .Default) { (action) -> Void in
+//            Filters.shared.blackWhite(image, completion: { (theImage) -> () in
+//                self.imageView.image = theImage
+//            })
+//        }
+//        
+//        let chromeAction = UIAlertAction(title: "Chrome", style: .Default) { (action) -> Void in
+//            Filters.shared.chrome(image, completion: { (theImage) -> () in
+//                self.imageView.image = theImage
+//            })
+//        }
+//        
+//        let invertAction = UIAlertAction(title: "Invert", style: .Default) { (action) -> Void in
+//            Filters.shared.invert(image, completion: { (theImage) -> () in
+//                self.imageView.image = theImage
+//            })
+//        }
+//        
+//        let transferAction = UIAlertAction(title: "Transfer", style: .Default) { (action) -> Void in
+//            Filters.shared.transfer(image, completion: { (theImage) -> () in
+//                self.imageView.image = theImage
+//            })
+//        }
+//        
+//
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+//        
+//        let resetAction = UIAlertAction(title: "Reset", style: .Default) { (action) -> Void in
+//            self.imageView.image = self.originalImage
+//        }
+//    
+//        
+//        actionSheet.addAction(bwAction)
+//        actionSheet.addAction(pixels)
+//        actionSheet.addAction(chromeAction)
+//        actionSheet.addAction(invertAction)
+//        actionSheet.addAction(transferAction)
+//        actionSheet.addAction(cancelAction)
+//        actionSheet.addAction(resetAction)
+//        
+//        self.presentViewController(actionSheet, animated: true, completion: nil)
         
     }
 

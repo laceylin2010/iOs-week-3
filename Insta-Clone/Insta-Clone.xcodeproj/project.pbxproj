@@ -11,6 +11,8 @@
 		AF2E51AD1C750EC5004A165F /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E51AC1C750EC5004A165F /* GalleryCollectionViewCell.swift */; };
 		AF2E51AF1C7511C9004A165F /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E51AE1C7511C9004A165F /* Identity.swift */; };
 		AF2E51B11C7519ED004A165F /* GalleryCustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E51B01C7519ED004A165F /* GalleryCustomFlowLayout.swift */; };
+		AF2E51B51C765CC0004A165F /* FiltersPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E51B41C765CC0004A165F /* FiltersPreviewViewController.swift */; };
+		AF2E51B71C765EF6004A165F /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E51B61C765EF6004A165F /* SegueHandlerType.swift */; };
 		AFC7E6121C6E3F9F002EAE3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC7E6111C6E3F9F002EAE3B /* AppDelegate.swift */; };
 		AFC7E6171C6E3F9F002EAE3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC7E6151C6E3F9F002EAE3B /* Main.storyboard */; };
 		AFC7E6191C6E3F9F002EAE3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFC7E6181C6E3F9F002EAE3B /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 		AF2E51AC1C750EC5004A165F /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF2E51AE1C7511C9004A165F /* Identity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 		AF2E51B01C7519ED004A165F /* GalleryCustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCustomFlowLayout.swift; sourceTree = "<group>"; };
+		AF2E51B41C765CC0004A165F /* FiltersPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersPreviewViewController.swift; sourceTree = "<group>"; };
+		AF2E51B61C765EF6004A165F /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
 		AFC7E60E1C6E3F9F002EAE3B /* Insta-Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insta-Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC7E6111C6E3F9F002EAE3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFC7E6161C6E3F9F002EAE3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 			children = (
 				AF2E51AA1C75082E004A165F /* GalleryViewController.swift */,
 				AFC7E6281C6E4F0D002EAE3B /* ImageViewController.swift */,
+				AF2E51B41C765CC0004A165F /* FiltersPreviewViewController.swift */,
+				AF2E51B61C765EF6004A165F /* SegueHandlerType.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -212,8 +218,10 @@
 				AFC7E6291C6E4F0D002EAE3B /* ImageViewController.swift in Sources */,
 				AFC7E6521C73C111002EAE3B /* Post.swift in Sources */,
 				AFC7E6121C6E3F9F002EAE3B /* AppDelegate.swift in Sources */,
+				AF2E51B71C765EF6004A165F /* SegueHandlerType.swift in Sources */,
 				AF2E51B11C7519ED004A165F /* GalleryCustomFlowLayout.swift in Sources */,
 				AF2E51AB1C75082E004A165F /* GalleryViewController.swift in Sources */,
+				AF2E51B51C765CC0004A165F /* FiltersPreviewViewController.swift in Sources */,
 				AFC7E6501C73BF7A002EAE3B /* API.swift in Sources */,
 				AF2E51AF1C7511C9004A165F /* Identity.swift in Sources */,
 				AF2E51AD1C750EC5004A165F /* GalleryCollectionViewCell.swift in Sources */,
