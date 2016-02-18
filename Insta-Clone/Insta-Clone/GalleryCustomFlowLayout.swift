@@ -29,9 +29,7 @@ class GalleryCustomFlowLayout: UICollectionViewFlowLayout
         self.minimumLineSpacing = self.spacing
         self.minimumInteritemSpacing = self.spacing
         
-        print(self.itemWidth())
-        
-        self.itemSize = CGSize(width: self.itemWidth(), height: self.itemWidth() * 1)
+        self.itemSize = CGSize(width: self.itemWidth(), height: self.itemWidth())
         
     }
     

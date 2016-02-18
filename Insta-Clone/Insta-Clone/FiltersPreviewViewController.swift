@@ -8,10 +8,23 @@
 
 import UIKit
 
-class FiltersPreviewViewController: UIViewController, Identity
+
+
+protocol FilterPreviewDelegate: class
 {
     
+    func filtersPreviewViewControllerDidFinish(image: UIImage)
+    
+}
+
+class FiltersPreviewViewController: UIViewController, Identity
+{
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     var image: UIImage!
+    weak var delegate: FilterPreviewDelegate?
+    let datasource = [Filters.shared.originalImage,Filters.shared.blackWhite, Filters.shared.chrome, Filters.shared.invert, Filters.shared.pixelate, Filters.shared.transfer]
 
     class func id() -> String
     {
@@ -20,7 +33,7 @@ class FiltersPreviewViewController: UIViewController, Identity
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupCollectionView()
         
     }
 
@@ -29,6 +42,13 @@ class FiltersPreviewViewController: UIViewController, Identity
         
     }
     
-
+    func setupCollectionView()
+    {
+        self.collectionView.collectionViewLayout = GalleryCustomFlowLayout(columns: 2)
+    }
 
 }
+
+
+
+

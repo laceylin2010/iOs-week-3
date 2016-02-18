@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, SegueHandlerType
+class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FilterPreviewDelegate, SegueHandlerType
 {
     
     @IBOutlet weak var imageView: UIImageView!
@@ -49,7 +49,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
             guard let image = sender as? UIImage else { fatalError() }
             
             previewViewController.image = image
-//            previewViewController.delegate = self
+            previewViewController.delegate = self
         }
     }
     
@@ -198,5 +198,9 @@ extension ImageViewController
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func filtersPreviewViewControllerDidFinish(image: UIImage) {
+        self.imageView.image = image
     }
 }

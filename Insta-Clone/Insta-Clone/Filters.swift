@@ -41,6 +41,11 @@ class Filters
 
     }
     
+    func originalImage(image: UIImage, completion: FiltersCompletion)
+    {
+        completion(theimage: image)
+    }
+    
     func blackWhite(image: UIImage, completion: FiltersCompletion)
     {
         self.filter("CIPhotoEffectMono", image: image, completion: completion)

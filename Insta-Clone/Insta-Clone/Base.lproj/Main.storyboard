@@ -31,17 +31,16 @@
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="Edit" id="bLD-r0-pKa">
+                        <barButtonItem systemItem="edit" id="bLD-r0-pKa">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="editButtonSelected:" destination="BYZ-38-t0r" id="kMb-wl-aIw"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="D0j-AT-YOr"/>
-                        <barButtonItem title="+" width="320" id="cSw-mr-er0">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <barButtonItem style="plain" systemItem="add" id="emJ-XL-IRY">
                             <connections>
-                                <action selector="addImageButton:" destination="BYZ-38-t0r" id="8VP-nb-0eo"/>
+                                <action selector="addImageButton:" destination="BYZ-38-t0r" id="IWA-6i-Q1p"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Eg7-Ez-wGj"/>
@@ -55,7 +54,7 @@
                     <navigationItem key="navigationItem" title="Insta Filter" id="6wE-HY-cSF"/>
                     <connections>
                         <outlet property="imageView" destination="jEF-QK-WmS" id="tvT-EZ-Thy"/>
-                        <segue destination="coY-iN-1I9" kind="presentation" identifier="FilterPreviewSegue" id="ti9-cP-O7q"/>
+                        <segue destination="coY-iN-1I9" kind="presentation" identifier="FiltersPreviewViewController" id="ti9-cP-O7q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -74,6 +73,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" verticalCompressionResistancePriority="761" translatesAutoresizingMaskIntoConstraints="NO" id="Vtr-OT-G2y">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Gallery" id="z7C-Tz-Ff4"/>
+                                </items>
+                            </navigationBar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="753" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="S1a-kZ-SaB">
+                                <rect key="frame" x="554" y="40" width="20" height="20"/>
+                            </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ymq-8Y-krd">
                                 <rect key="frame" x="0.0" y="72" width="600" height="528"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oxH-Gn-I1O">
@@ -111,15 +119,6 @@
                                     <outlet property="dataSource" destination="jIL-Ku-Sev" id="OjY-m5-oio"/>
                                 </connections>
                             </collectionView>
-                            <navigationBar contentMode="scaleToFill" verticalCompressionResistancePriority="761" translatesAutoresizingMaskIntoConstraints="NO" id="Vtr-OT-G2y">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Gallery" id="z7C-Tz-Ff4"/>
-                                </items>
-                            </navigationBar>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="753" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="S1a-kZ-SaB">
-                                <rect key="frame" x="554" y="40" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -154,8 +153,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nYQ-69-cpq">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nYQ-69-cpq">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1Ib-5u-9uB">
                                     <size key="itemSize" width="166" height="169"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -163,7 +163,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dUs-SA-Mlo">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryCollectionViewCell" id="dUs-SA-Mlo" customClass="GalleryCollectionViewCell" customModule="Insta_Clone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="166" height="169"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -176,18 +176,35 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" red="0.69829842931937169" green="0.69829842931937169" blue="0.69829842931937169" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottomMargin" secondItem="OWw-3Q-bsk" secondAttribute="bottom" constant="-8" id="YVf-p0-tuu"/>
-                                            <constraint firstItem="OWw-3Q-bsk" firstAttribute="leading" secondItem="dUs-SA-Mlo" secondAttribute="leadingMargin" constant="-8" id="aqn-3H-oss"/>
-                                            <constraint firstItem="OWw-3Q-bsk" firstAttribute="top" secondItem="dUs-SA-Mlo" secondAttribute="topMargin" constant="-8" id="fwf-D7-VvZ"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="OWw-3Q-bsk" secondAttribute="trailing" constant="-8" id="zeI-Kq-Qko"/>
+                                            <constraint firstAttribute="bottom" secondItem="OWw-3Q-bsk" secondAttribute="bottom" id="YVf-p0-tuu"/>
+                                            <constraint firstItem="OWw-3Q-bsk" firstAttribute="leading" secondItem="dUs-SA-Mlo" secondAttribute="leading" id="aqn-3H-oss"/>
+                                            <constraint firstItem="OWw-3Q-bsk" firstAttribute="top" secondItem="dUs-SA-Mlo" secondAttribute="top" id="fwf-D7-VvZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="OWw-3Q-bsk" secondAttribute="trailing" id="zeI-Kq-Qko"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="OWw-3Q-bsk" id="qND-If-1pT"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="coY-iN-1I9" id="fhz-le-J9s"/>
+                                    <outlet property="delegate" destination="coY-iN-1I9" id="tv8-Ki-vyv"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nYQ-69-cpq" firstAttribute="leading" secondItem="tt9-ON-cDH" secondAttribute="leading" id="8wQ-uI-Gx2"/>
+                            <constraint firstItem="M1G-qK-Jix" firstAttribute="top" secondItem="nYQ-69-cpq" secondAttribute="bottom" id="LaY-Zh-JDl"/>
+                            <constraint firstAttribute="trailing" secondItem="nYQ-69-cpq" secondAttribute="trailing" id="PIx-9E-LOU"/>
+                            <constraint firstItem="nYQ-69-cpq" firstAttribute="top" secondItem="tt9-ON-cDH" secondAttribute="topMargin" id="aU6-Rd-bRN"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="nYQ-69-cpq" id="ntu-bg-s2A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="45w-Z6-opL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
