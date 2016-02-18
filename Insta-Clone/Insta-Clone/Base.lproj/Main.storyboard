@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uZ9-jt-I3y">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -31,18 +32,21 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem title="Edit" id="bLD-r0-pKa">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="editButtonSelected:" destination="BYZ-38-t0r" id="kMb-wl-aIw"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="D0j-AT-YOr"/>
                         <barButtonItem title="+" width="320" id="cSw-mr-er0">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="addImageButton:" destination="BYZ-38-t0r" id="8VP-nb-0eo"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Eg7-Ez-wGj"/>
                         <barButtonItem title="Save" id="KUC-kg-DWT">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="saveButtonSelected:" destination="BYZ-38-t0r" id="ZEM-PF-ife"/>
                             </connections>
@@ -72,7 +76,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ymq-8Y-krd">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="72" width="600" height="528"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oxH-Gn-I1O">
                                     <size key="itemSize" width="198" height="188"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -108,13 +112,22 @@
                                     <outlet property="dataSource" destination="jIL-Ku-Sev" id="OjY-m5-oio"/>
                                 </connections>
                             </collectionView>
+                            <navigationBar contentMode="scaleToFill" verticalCompressionResistancePriority="761" translatesAutoresizingMaskIntoConstraints="NO" id="Vtr-OT-G2y">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Gallery" id="z7C-Tz-Ff4"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vtr-OT-G2y" secondAttribute="trailing" constant="-20" id="1bk-Yk-NHk"/>
+                            <constraint firstItem="Vtr-OT-G2y" firstAttribute="leading" secondItem="uG9-j9-eEI" secondAttribute="leadingMargin" constant="-20" id="A3O-FT-eXo"/>
                             <constraint firstItem="ymq-8Y-krd" firstAttribute="leading" secondItem="uG9-j9-eEI" secondAttribute="leading" id="QWP-Kw-C1Z"/>
                             <constraint firstAttribute="bottom" secondItem="ymq-8Y-krd" secondAttribute="bottom" id="hXe-fD-ev3"/>
-                            <constraint firstItem="ymq-8Y-krd" firstAttribute="top" secondItem="uG9-j9-eEI" secondAttribute="top" id="m38-mZ-sMN"/>
+                            <constraint firstItem="ymq-8Y-krd" firstAttribute="top" secondItem="uG9-j9-eEI" secondAttribute="top" constant="72" id="m38-mZ-sMN"/>
                             <constraint firstAttribute="trailing" secondItem="ymq-8Y-krd" secondAttribute="trailing" id="pfM-qS-sS1"/>
+                            <constraint firstItem="Vtr-OT-G2y" firstAttribute="top" secondItem="uG9-j9-eEI" secondAttribute="topMargin" constant="28" id="xGP-n3-ovd"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" id="Gp8-iK-YAI"/>
@@ -124,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dki-dU-AIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1814" y="350"/>
+            <point key="canvasLocation" x="1808" y="342"/>
         </scene>
         <!--Upload-->
         <scene sceneID="LJh-a1-LB4">
@@ -140,6 +153,7 @@
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="c3P-ed-IuH">
                         <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ep6-Xc-hEb"/>
@@ -168,4 +182,5 @@
             <point key="canvasLocation" x="1954" y="-410"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
 </document>

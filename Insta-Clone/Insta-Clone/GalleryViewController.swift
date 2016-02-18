@@ -31,6 +31,7 @@ class GalleryViewController: UIViewController
         super.viewDidLoad()
         self.collectionView.collectionViewLayout = GalleryCustomFlowLayout()
         self.navigationItem.title = "Gallery"
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,10 +41,19 @@ class GalleryViewController: UIViewController
     
     func update()
     {
+        
+        let spinner = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+        spinner.hidesWhenStopped = true
+        spinner.startAnimating()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: spinner)
+        
+        
         API.shared.GETPOST { (posts) -> () in
             if let posts = posts {
                 self.dataSource = posts
                 print(posts)
+                self.navigationItem.rightBarButtonItem = nil
             } else { print ("no posts")}
         }
     }

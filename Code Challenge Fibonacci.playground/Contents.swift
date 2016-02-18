@@ -2,7 +2,10 @@
 
 import UIKit
 
-var numbers = []
-
-
-
+func fibonacciNumbers(number: Int) -> [Int]
+{
+    for fib in fibonacciNumbers(number){
+        let array = [number + index(
+            , Int32)]
+    }
+}

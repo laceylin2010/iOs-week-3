@@ -31,7 +31,7 @@ class GalleryCustomFlowLayout: UICollectionViewFlowLayout
         
         print(self.itemWidth())
         
-        self.itemSize = CGSize(width: self.itemWidth(), height: self.itemWidth())
+        self.itemSize = CGSize(width: self.itemWidth(), height: self.itemWidth() * 1)
         
     }
     
