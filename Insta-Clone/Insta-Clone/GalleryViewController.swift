@@ -11,6 +11,7 @@ import UIKit
 class GalleryViewController: UIViewController
 {
 
+    @IBOutlet weak var rightBarButtonItem: UINavigationBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var dataSource = [Post]()

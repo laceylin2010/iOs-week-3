@@ -2,10 +2,23 @@
 
 import UIKit
 
-func fibonacciNumbers(number: Int) -> [Int]
+func fibonacciNumbers()
 {
-    for fib in fibonacciNumbers(number){
-        let array = [number + index(
-            , Int32)]
+    var firstNumb = 0
+    var secondNumb = 1
+    
+    for var i=0; i<100; i++
+    {
+        let fNumbers = firstNumb + secondNumb
+        
+        firstNumb = secondNumb
+        
+        secondNumb = fNumbers
+        
+        print(fNumbers)
+        
     }
 }
+
+fibonacciNumbers()
+

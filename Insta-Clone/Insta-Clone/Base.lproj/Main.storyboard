@@ -118,6 +118,9 @@
                                     <navigationItem title="Gallery" id="z7C-Tz-Ff4"/>
                                 </items>
                             </navigationBar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="753" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="S1a-kZ-SaB">
+                                <rect key="frame" x="554" y="40" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -133,6 +136,7 @@
                     <tabBarItem key="tabBarItem" title="Feed" id="Gp8-iK-YAI"/>
                     <connections>
                         <outlet property="collectionView" destination="ymq-8Y-krd" id="inf-6D-Ehe"/>
+                        <outlet property="rightBarButtonItem" destination="Vtr-OT-G2y" id="Dvb-a5-gRQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dki-dU-AIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
