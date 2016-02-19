@@ -195,18 +195,27 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="nYQ-69-cpq" firstAttribute="leading" secondItem="tt9-ON-cDH" secondAttribute="leading" id="8wQ-uI-Gx2"/>
                             <constraint firstItem="M1G-qK-Jix" firstAttribute="top" secondItem="nYQ-69-cpq" secondAttribute="bottom" id="LaY-Zh-JDl"/>
                             <constraint firstAttribute="trailing" secondItem="nYQ-69-cpq" secondAttribute="trailing" id="PIx-9E-LOU"/>
                             <constraint firstItem="nYQ-69-cpq" firstAttribute="top" secondItem="tt9-ON-cDH" secondAttribute="topMargin" id="aU6-Rd-bRN"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Q1g-UM-XIL" appends="YES" id="Ct3-uC-Rx8"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="nYQ-69-cpq" id="ntu-bg-s2A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="45w-Z6-opL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="Q1g-UM-XIL">
+                    <connections>
+                        <action selector="pinchGesture:" destination="coY-iN-1I9" id="VSb-Jf-pxR"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="770" y="1024"/>
         </scene>

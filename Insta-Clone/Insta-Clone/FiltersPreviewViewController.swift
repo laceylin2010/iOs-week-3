@@ -21,6 +21,15 @@ class FiltersPreviewViewController: UIViewController, Identity
 {
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var smallLayout = GalleryCustomFlowLayout()
+    lazy var mediumLayout = GalleryCustomFlowLayout(columns: 2)
+    lazy var largeLayout = GalleryCustomFlowLayout(columns: 1)
+    
+    var postPinchTransitionCompleted = true
+    var pinchDirectionDetermined = false
+    var initialPinchScale: CGFloat = 0.0
+    var pinchPoint: CGPoint = CGPoint(x: 0.0, y: 0.0)
+    var transitionLayout: UICollectionViewTransitionLayout?
     
     var image: UIImage!
     weak var delegate: FilterPreviewDelegate?
@@ -45,9 +54,37 @@ class FiltersPreviewViewController: UIViewController, Identity
     func setupCollectionView()
     {
         self.collectionView.collectionViewLayout = GalleryCustomFlowLayout(columns: 2)
-    }
 
+    }
+   
+    
+    @IBAction func pinchGesture(sender: UIPinchGestureRecognizer)
+    {
+        if sender.state == .Began {
+            if sender.velocity > 0 {
+                if self.collectionView.collectionViewLayout == self.smallLayout {
+                    self.collectionView.collectionViewLayout = self.mediumLayout
+                } else if self.collectionView.collectionViewLayout == mediumLayout {
+                    self.collectionView.collectionViewLayout = self.largeLayout
+                } else {
+                    self.collectionView.collectionViewLayout = self.largeLayout
+                }
+            } else {
+                if self.collectionView.collectionViewLayout == self.largeLayout {
+                    self.collectionView.collectionViewLayout = self.mediumLayout
+                } else if self.collectionView.collectionViewLayout == self.mediumLayout{
+                    self.collectionView.collectionViewLayout = self.smallLayout
+                } else {
+                    self.collectionView.collectionViewLayout = self.smallLayout
+                }
+            }
+        }
+        
+    }
 }
+
+
+
 
 
 
