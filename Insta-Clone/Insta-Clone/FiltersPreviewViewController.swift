@@ -25,12 +25,6 @@ class FiltersPreviewViewController: UIViewController, Identity
     lazy var mediumLayout = GalleryCustomFlowLayout(columns: 2)
     lazy var largeLayout = GalleryCustomFlowLayout(columns: 1)
     
-    var postPinchTransitionCompleted = true
-    var pinchDirectionDetermined = false
-    var initialPinchScale: CGFloat = 0.0
-    var pinchPoint: CGPoint = CGPoint(x: 0.0, y: 0.0)
-    var transitionLayout: UICollectionViewTransitionLayout?
-    
     var image: UIImage!
     weak var delegate: FilterPreviewDelegate?
     let datasource = [Filters.shared.originalImage,Filters.shared.blackWhite, Filters.shared.chrome, Filters.shared.invert, Filters.shared.pixelate, Filters.shared.transfer]

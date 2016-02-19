@@ -146,5 +146,6 @@ extension ImageViewController
     
     func filtersPreviewViewControllerDidFinish(image: UIImage) {
         self.imageView.image = image
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
