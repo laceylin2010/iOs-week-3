@@ -51,7 +51,13 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Insta Filter" id="6wE-HY-cSF"/>
+                    <navigationItem key="navigationItem" title="Insta Filter" id="6wE-HY-cSF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="xkf-x3-n9u">
+                            <connections>
+                                <action selector="uploadButton:" destination="BYZ-38-t0r" id="LNL-s4-cIC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="jEF-QK-WmS" id="tvT-EZ-Thy"/>
                         <segue destination="coY-iN-1I9" kind="presentation" identifier="FiltersPreviewViewController" id="ti9-cP-O7q"/>

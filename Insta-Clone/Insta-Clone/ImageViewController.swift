@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Social
+
 
 class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FilterPreviewDelegate, SegueHandlerType
 {
@@ -92,6 +94,21 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
         
     }
+    
+    @IBAction func uploadButton(sender: UIBarButtonItem)
+    {
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
+           let twitterUpload = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            guard let image = self.imageView.image as UIImage! else { return }
+            twitterUpload.addImage(image)
+            print("I am here")
+            self.presentViewController(twitterUpload, animated: true, completion: nil)
+        } else {
+            print("You are logged not logged in")
+        }
+    }
+    
+    
     
     func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafePointer<Void>)
     {
