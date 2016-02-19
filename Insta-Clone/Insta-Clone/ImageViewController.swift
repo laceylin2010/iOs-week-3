@@ -27,10 +27,6 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-//        let filterNames = CIFilter.filterNamesInCategories(nil)
-//        print(filterNames)
-
     }
     
     override func didReceiveMemoryWarning()
@@ -80,57 +76,6 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
         guard let image = self.imageView.image else { return }
         self.performSegueWithIdentifier(.Preview, sender: image)
-    
-        
-//        let actionSheet = UIAlertController(title: "filters", message: "Please select a filter", preferredStyle: .Alert)
-//        
-//        let pixels = UIAlertAction(title: "Pixels", style: .Default) { (action) -> Void in
-//            Filters.shared.pixelate(image, completion: { (theImage) -> () in
-//                self.imageView.image = theImage
-//            })
-//        }
-//        
-//        let bwAction = UIAlertAction(title: "Black and White", style: .Default) { (action) -> Void in
-//            Filters.shared.blackWhite(image, completion: { (theImage) -> () in
-//                self.imageView.image = theImage
-//            })
-//        }
-//        
-//        let chromeAction = UIAlertAction(title: "Chrome", style: .Default) { (action) -> Void in
-//            Filters.shared.chrome(image, completion: { (theImage) -> () in
-//                self.imageView.image = theImage
-//            })
-//        }
-//        
-//        let invertAction = UIAlertAction(title: "Invert", style: .Default) { (action) -> Void in
-//            Filters.shared.invert(image, completion: { (theImage) -> () in
-//                self.imageView.image = theImage
-//            })
-//        }
-//        
-//        let transferAction = UIAlertAction(title: "Transfer", style: .Default) { (action) -> Void in
-//            Filters.shared.transfer(image, completion: { (theImage) -> () in
-//                self.imageView.image = theImage
-//            })
-//        }
-//        
-//
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-//        
-//        let resetAction = UIAlertAction(title: "Reset", style: .Default) { (action) -> Void in
-//            self.imageView.image = self.originalImage
-//        }
-//    
-//        
-//        actionSheet.addAction(bwAction)
-//        actionSheet.addAction(pixels)
-//        actionSheet.addAction(chromeAction)
-//        actionSheet.addAction(invertAction)
-//        actionSheet.addAction(transferAction)
-//        actionSheet.addAction(cancelAction)
-//        actionSheet.addAction(resetAction)
-//        
-//        self.presentViewController(actionSheet, animated: true, completion: nil)
         
     }
 
@@ -145,7 +90,6 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
                 print("Cloudkit Saved")
             }
         }
-        
         
     }
     
